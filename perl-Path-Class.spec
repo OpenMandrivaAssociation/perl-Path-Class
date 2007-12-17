@@ -13,7 +13,6 @@ URL:		http://search.cpan.org/dist/%{realname}/
 Source:		%{realname}-%{version}.tar.bz2
 BuildRequires:	perl-devel
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-root
 
 %description
 Path::Class is a module for manipulation of file and directory specifications
