@@ -1,7 +1,7 @@
 %define realname Path-Class
 %define name perl-%{realname}
 %define version 0.16
-%define release %mkrel 1
+%define release %mkrel 3
 
 Summary:	Cross-platform path specification manipulation
 Name:		%{name}
