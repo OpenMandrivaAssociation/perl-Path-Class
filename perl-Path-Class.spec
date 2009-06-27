@@ -1,19 +1,16 @@
-%define realname Path-Class
-%define name perl-%{realname}
-%define version 0.16
-%define release %mkrel 3
+%define upstream_name  	    Path-Class
+%define upstream_version    0.17
 
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 Summary:	Cross-platform path specification manipulation
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
 License:	Artistic/GPL
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{realname}/
-Source:		%{realname}-%{version}.tar.bz2
-BuildRequires:	perl-devel
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source:     http://www.cpan.org/modules/by-module/Path/%{upstream_name}-%{upstream_version}.tar.gz
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-root
+Buildroot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Path::Class is a module for manipulation of file and directory specifications
@@ -23,7 +20,7 @@ platform Perl runs on, including Unix, Windows, Mac, VMS, Epoc, Cygwin, OS/2,
 and NetWare.
 
 %prep
-%setup -q -n %{realname}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version} 
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
