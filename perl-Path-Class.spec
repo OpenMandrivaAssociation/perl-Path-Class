@@ -4,13 +4,15 @@
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
 Release:    %mkrel 1
+
 Summary:	Cross-platform path specification manipulation
 License:	Artistic/GPL
 Group:		Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
-Source:     http://www.cpan.org/modules/by-module/Path/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:    http://www.cpan.org/modules/by-module/Path/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildArch:	noarch
-Buildroot:	%{_tmppath}/%{name}-%{version}
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Path::Class is a module for manipulation of file and directory specifications
@@ -27,11 +29,14 @@ and NetWare.
 %make
 
 %check
-%{__make} test
+%make test
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %makeinstall_std
+
+%clean
+rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
@@ -39,7 +44,3 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorlib}/Path/Class/*
 %{perl_vendorlib}/Path/Class.pm
 %{_mandir}/*/*
-
-%clean
-rm -rf $RPM_BUILD_ROOT
-
