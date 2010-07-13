@@ -1,5 +1,5 @@
 %define upstream_name  	    Path-Class
-%define upstream_version 0.18
+%define upstream_version 0.19
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
