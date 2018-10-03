@@ -10,8 +10,9 @@ License:	Artistic/GPL
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{module}
 Source0:	https://cpan.metacpan.org/authors/id/K/KW/KWILLIAMS/%{module}-%{upstream_version}.tar.gz
-BuildRequires: perl-devel
-
+BuildRequires:	perl-devel
+BuildRequires:	perl(Test)
+BuildRequires:	perl(Perl::OSType)
 BuildArch:	noarch
 
 %description
