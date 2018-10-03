@@ -12,7 +12,9 @@ Url:		http://search.cpan.org/dist/%{module}
 Source0:	https://cpan.metacpan.org/authors/id/K/KW/KWILLIAMS/%{module}-%{upstream_version}.tar.gz
 BuildRequires:	perl-devel
 BuildRequires:	perl(Test)
+BuildRequires:	perl(Test::More)
 BuildRequires:	perl(Perl::OSType)
+BuildRequires:	perl(File::Spec::Win32)
 BuildArch:	noarch
 
 %description
