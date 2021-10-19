@@ -25,22 +25,22 @@ platform Perl runs on, including Unix, Windows, Mac, VMS, Epoc, Cygwin, OS/2,
 and NetWare.
 
 %prep
-%setup -q -n %{module}-%{upstream_version} 
+%autosetup -p1 -n %{module}-%{upstream_version} 
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-%make
+perl Makefile.PL INSTALLDIRS=vendor
+%make_build
 
 %check
 %make test
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc README Changes
 %{perl_vendorlib}/Path/Class/*
 %{perl_vendorlib}/Path/Class.pm
 %{perl_vendorlib}/Path/README.pod
-%{_mandir}/*/*
+%doc %{_mandir}/*/*
 
