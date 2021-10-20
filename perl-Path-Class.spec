@@ -32,7 +32,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 %make_build
 
 %check
-%make test
+make test
 
 %install
 %make_install
@@ -41,6 +41,5 @@ perl Makefile.PL INSTALLDIRS=vendor
 %doc README Changes
 %{perl_vendorlib}/Path/Class/*
 %{perl_vendorlib}/Path/Class.pm
-%{perl_vendorlib}/Path/README.pod
 %doc %{_mandir}/*/*
 
