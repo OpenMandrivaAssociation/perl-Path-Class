@@ -1,15 +1,14 @@
 %define	module	Path-Class
-%define upstream_version 0.37
 
 Name:		perl-%{module}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	0.37
+Release:	1
 
 Summary:	Cross-platform path specification manipulation
 License:	Artistic/GPL
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{module}
-Source0:	https://cpan.metacpan.org/authors/id/K/KW/KWILLIAMS/%{module}-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/pod/Path::Class
+Source0:	https://cpan.metacpan.org/authors/id/K/KW/KWILLIAMS/%{module}-%{version}.tar.gz
 BuildRequires:	perl-devel
 BuildRequires:	perl(Test)
 BuildRequires:	perl(Test::More)
@@ -25,7 +24,7 @@ platform Perl runs on, including Unix, Windows, Mac, VMS, Epoc, Cygwin, OS/2,
 and NetWare.
 
 %prep
-%autosetup -p1 -n %{module}-%{upstream_version} 
+%autosetup -p1 -n %{module}-%{version} 
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -42,4 +41,3 @@ make test
 %{perl_vendorlib}/Path/Class/*
 %{perl_vendorlib}/Path/Class.pm
 %doc %{_mandir}/*/*
-
