@@ -9,6 +9,7 @@ License:	Artistic/GPL
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/Path::Class
 Source0:	https://cpan.metacpan.org/authors/id/K/KW/KWILLIAMS/%{module}-%{version}.tar.gz
+BuildRequires:	make
 BuildRequires:	perl-devel
 BuildRequires:	perl(Test)
 BuildRequires:	perl(Test::More)
